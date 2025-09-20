@@ -2,6 +2,7 @@
 #define __BSP_UART_H__
 
 #include "stm8s.h"
+#include "stdio.h"
 
 void uart_hw_init(u32 baudrate);
 void uart_send_byte(uint8_t data);
