@@ -1,33 +1,62 @@
-# IDE files
-.vscode/
-
-# Build outputs
+# IAR Project Files
 IAR/Debug/
+IAR/Release/
+*.wsdt
+*.ewp
+*.eww
+*.ewd
+*.ewt
+*.dep
+*.pbd
+*.pbd.browse
+*.pbd.linf
+*.bat
+*.ps1
+*.xcl
 
-# Object files
+# Build Output
+Debug/
+Release/
+Obj/
+Exe/
+List/
+
+*.map
 *.o
 *.obj
-*.elf
-*.hex
-*.bin
-*.map
-
-# List files
 *.lst
-*.lss
+*.out
+*.hex
+*.elf
 
-# Temporary files
+# Log Files
+BuildLog.log
+*.log
+
+# IDE and Editor Files
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System Files
+Thumbs.db
+.DS_Store
+
+# Temporary Files
 *.tmp
 *.temp
-*.bak
-*.swp
-*~
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Configuration Files (if not needed for version control)
+*.ini
+*.conf
+
+# Environment Variables
+.env
+.env.local
+
+# Backup Files
+*.bak
+*.backup

@@ -1,6 +1,9 @@
 #include "bsp_uart.h"
 #include "stm8s_uart1.h"
 
+// UART接收回调函数指针
+static void (*uart_rx_callback)(uint8_t data) = NULL;
+
 // UART硬件初始化
 void uart_hw_init(u32 baudrate)
 {
@@ -8,6 +11,12 @@ void uart_hw_init(u32 baudrate)
     UART1_Init(baudrate, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
     UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE); // 使能接收中断
     UART1_Cmd(ENABLE);                        // 使能UART1
+}
+
+// 设置UART接收回调函数
+void uart_set_rx_callback(void (*rx_callback)(uint8_t data))
+{
+    uart_rx_callback = rx_callback;
 }
 
 // UART发送字节
@@ -35,6 +44,11 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
     {
         // 读取接收的数据
         uint8_t data = UART1_ReceiveData8();
+        // 调用注册的接收回调函数
+        if (uart_rx_callback != NULL)
+        {
+            uart_rx_callback(data);
+        }
         // 清除中断标志
         UART1_ClearITPendingBit(UART1_IT_RXNE);
     }

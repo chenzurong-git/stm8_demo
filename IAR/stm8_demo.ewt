@@ -2104,10 +2104,28 @@
             <file>
                 <name>$PROJ_DIR$\..\APP\msh\msh.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\APP\msh\msh.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\APP\msh\msh_task.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\APP\msh\msh_task.h</name>
+            </file>
         </group>
+        <file>
+            <name>$PROJ_DIR$\..\APP\app_task.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\APP\app_task.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\..\APP\main.c</name>
         </file>
+        <configuration>
+            <name>Debug</name>
+        </configuration>
     </group>
     <group>
         <name>BSP</name>
@@ -2123,6 +2141,9 @@
         <file>
             <name>$PROJ_DIR$\..\BSP\uart\bsp_uart.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\BSP\timer\sys_timer.c</name>
+        </file>
     </group>
     <group>
         <name>LIB</name>
@@ -2133,7 +2154,25 @@
             <name>$PROJ_DIR$\..\Lib\src\stm8s_gpio.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\Lib\src\stm8s_it.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Lib\src\stm8s_tim4.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\Lib\src\stm8s_uart1.c</name>
+        </file>
+        <configuration>
+            <name>Debug</name>
+        </configuration>
+    </group>
+    <group>
+        <name>MTOS</name>
+        <file>
+            <name>$PROJ_DIR$\..\Min_Task_OS\src\mtos_list.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Min_Task_OS\src\mtos_task.c</name>
         </file>
     </group>
 </project>
